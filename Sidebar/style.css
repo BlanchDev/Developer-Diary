@@ -23,11 +23,23 @@ body {
 }
 
 .openLeftBar {
+  animation: 0.5s softWidth;
   width: calc(100% - 270px);
 }
 
 .openRightBar {
+  animation: 0.5s softWidth;
   width: calc(100% - 270px);
+}
+
+@keyframes softWidth {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: calc(100% - 270px);
+  }
 }
 
 .mainCenter .menus {
@@ -72,8 +84,8 @@ body {
   align-items: center;
   padding: 30px 0;
 
-  min-width: 270px !important;
-  width: 270px !important;
+  min-width: 0px;
+  width: 0px;
   height: 100%;
   background-color: #181818;
   transition: 0.3s;
@@ -82,4 +94,19 @@ body {
 .openBar {
   display: flex;
   transition: all 0.3s ease;
+  animation: 0.5s softBar;
+  min-width: 270px;
+  max-width: 270px;
+}
+
+@keyframes softBar {
+  from {
+    min-width: 10px;
+    max-width: 10px;
+  }
+
+  to {
+    min-width: 270px;
+    max-width: 270px;
+  }
 }
